@@ -1,0 +1,35 @@
+.header {
+    max-width: 1366px;
+    margin: auto;
+    padding: 0 45px 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    &__list {
+        display: flex;
+        list-style-type: none;
+        font-family: $tt;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    &__list-item {
+        margin-left: 10px;
+    }
+
+    &__list-item-link {
+        display: block;
+        color: #192632;
+        text-decoration: none;
+        padding: 33px 15px 30px 15px;
+        background-color: transparent;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        &:hover {
+            background-color: $red;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,96 @@
+.intro {
+    max-width: 1366px;
+    margin: auto;
+    position: relative;
+    &__body {
+        padding-top: 98px;
+        padding-left: 50px;
+        padding-bottom: 183px;
+    }
+
+    &__text {
+        font-family: $tt;
+        font-style: italic;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 34px;
+        color: #fc0000;
+        margin-left: 10px;
+    }
+
+    &__title {
+        font-family: $sv;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 100px;
+        line-height: 150px;
+        letter-spacing: 0.02em;
+        color: #192632;
+    }
+
+    &__btn {
+        display: block;
+        width: 205px;
+        height: 50px;
+        margin-top: 50px;
+        font-family: $tt;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #f1f1f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        border: none;
+        background: none;
+        padding-top: 5px;
+        &-svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            path {
+                transition: fill 0.2s linear;
+            }
+            &_hover {
+                z-index: -2;
+                transition: left 0.2s linear, top 0.2s linear;
+                path {
+                    fill: $red-dark;
+                }
+            }
+        }
+        &:hover &-svg {
+            &_hover {
+                left: 5px;
+                top: 5px;
+            }
+        }
+        &:active &-svg {
+            path {
+                fill: $red-dark;
+            }
+            &_hover {
+                left: 0;
+                top: 0;
+            }
+        }
+        &-text {
+            position: relative;
+        }
+    }
+
+    &__pic {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+}
