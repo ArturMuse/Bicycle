@@ -207,7 +207,7 @@
 .intro__body {
   padding-top: 98px;
   padding-left: 50px;
-  padding-bottom: 183px;
+  padding-bottom: 182px;
 }
 
 .intro__text {
@@ -308,6 +308,101 @@
   top: 0;
   right: 0;
   z-index: -1;
+}
+
+.info {
+  background-color: #fc0000;
+  min-height: 800px;
+  position: relative;
+}
+
+.info__item {
+  position: relative;
+}
+
+.info__item-text {
+  font-family: "TT Commons", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 120px;
+  line-height: 100px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #f1f1f1;
+  margin-bottom: 50px;
+  -webkit-animation: scrollInfinite 10s linear infinite;
+          animation: scrollInfinite 10s linear infinite;
+}
+
+.info__item-text-wrap {
+  position: absolute;
+  top: 275px;
+  z-index: 0;
+}
+
+.info__item-text span {
+  -webkit-text-stroke: 2px #f1f1f1;
+  color: transparent;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.info__item-text_m {
+  -webkit-animation: scrollInfiniteReverse 10s linear infinite;
+          animation: scrollInfiniteReverse 10s linear infinite;
+}
+
+.info__item-text_m span:first-child {
+  margin-left: 0;
+}
+
+@-webkit-keyframes scrollInfinite {
+  0% {
+    -webkit-transform: translateX(-330px);
+            transform: translateX(-330px);
+  }
+  100% {
+    -webkit-transform: translateX(-2060px);
+            transform: translateX(-2060px);
+  }
+}
+
+@keyframes scrollInfinite {
+  0% {
+    -webkit-transform: translateX(-330px);
+            transform: translateX(-330px);
+  }
+  100% {
+    -webkit-transform: translateX(-2060px);
+            transform: translateX(-2060px);
+  }
+}
+
+@-webkit-keyframes scrollInfiniteReverse {
+  0% {
+    -webkit-transform: translateX(-2060px);
+            transform: translateX(-2060px);
+  }
+  100% {
+    -webkit-transform: translateX(-330px);
+            transform: translateX(-330px);
+  }
+}
+
+@keyframes scrollInfiniteReverse {
+  0% {
+    -webkit-transform: translateX(-2060px);
+            transform: translateX(-2060px);
+  }
+  100% {
+    -webkit-transform: translateX(-330px);
+            transform: translateX(-330px);
+  }
+}
+
+.info__item-content-pic {
+  position: relative;
+  z-index: 1;
 }
 
 *,
