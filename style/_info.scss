@@ -2,10 +2,10 @@
     background-color: $red;
     min-height: 800px;
     position: relative;
-    &__item {
-        position: relative;
-    }
-    &__item-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__text {
         font-family: $tt;
         font-style: italic;
         font-weight: bold;
@@ -15,7 +15,8 @@
         text-transform: uppercase;
         color: $smooth;
         margin-bottom: 50px;
-        animation: scrollInfinite 10s linear infinite;
+        transform: translateX(-100%);
+        // animation: scrollInfinite 10s linear infinite;
         &-wrap {
             position: absolute;
             top: 275px;
@@ -28,7 +29,8 @@
             margin-right: 40px;
         }
         &_m {
-            animation: scrollInfiniteReverse 10s linear infinite;
+            // animation: scrollInfiniteReverse 10s linear infinite;
+            transform: translateX(100%);
             span:first-child {
                 margin-left: 0;
             }
@@ -51,10 +53,18 @@
         }
     }
 
-    &__item-content {
+    &__content {
+        max-width: 438px;
+        position: relative;
+        &-btn {
+            position: absolute;
+            right: -69px;
+            bottom: -69px;
+            z-index: 2;
+        }
     }
 
-    &__item-content-pic {
+    &__content-pic {
         position: relative;
         z-index: 1;
     }

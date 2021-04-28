@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "TT Commons";
   src: url("../fonts/TTC/TTCommons-ThinItalic.eot");
@@ -314,13 +315,18 @@
   background-color: #fc0000;
   min-height: 800px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.info__item {
-  position: relative;
-}
-
-.info__item-text {
+.info__text {
   font-family: "TT Commons", sans-serif;
   font-style: italic;
   font-weight: bold;
@@ -330,29 +336,31 @@
   text-transform: uppercase;
   color: #f1f1f1;
   margin-bottom: 50px;
-  -webkit-animation: scrollInfinite 10s linear infinite;
-          animation: scrollInfinite 10s linear infinite;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
-.info__item-text-wrap {
+.info__text-wrap {
   position: absolute;
   top: 275px;
   z-index: 0;
 }
 
-.info__item-text span {
+.info__text span {
   -webkit-text-stroke: 2px #f1f1f1;
   color: transparent;
   margin-left: 40px;
   margin-right: 40px;
 }
 
-.info__item-text_m {
-  -webkit-animation: scrollInfiniteReverse 10s linear infinite;
-          animation: scrollInfiniteReverse 10s linear infinite;
+.info__text_m {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
-.info__item-text_m span:first-child {
+.info__text_m span:first-child {
   margin-left: 0;
 }
 
@@ -400,9 +408,179 @@
   }
 }
 
-.info__item-content-pic {
+.info__content {
+  max-width: 438px;
+  position: relative;
+}
+
+.info__content-btn {
+  position: absolute;
+  right: -69px;
+  bottom: -69px;
+  z-index: 2;
+}
+
+.info__content-pic {
   position: relative;
   z-index: 1;
+}
+
+.footer__body {
+  max-width: 1366px;
+  max-height: 800px;
+  margin: auto;
+  background: #f1e7d4;
+  margin-top: 183px;
+}
+
+.footer__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__form-title {
+  font-family: "Soviet", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 150px;
+  letter-spacing: 0.02em;
+  color: #192632;
+  text-transform: uppercase;
+}
+
+.footer__form-input-text {
+  font-family: "TT Commons", sans-serif;
+  width: 613px;
+  height: 60px;
+  background: #f1f1f1;
+  border: 1px solid #bdb199;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #bdb199;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.footer__form-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 613px;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 40px;
+}
+
+.footer__form-label-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 400px;
+  margin-left: 15px;
+}
+
+.footer__form-submit {
+  background: #fc0000;
+  width: 198px;
+  height: 57px;
+  font-family: TT Commons Trial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  /* Белый */
+  color: #f1f1f1;
+}
+
+.footer__form-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 13px;
+}
+
+.footer__form-input-checkbox {
+  border: 1px solid #192632;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.footer__form-input-checkbox-span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 385px;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  font-family: TT Commons Trial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  /* Черный */
+  color: #192632;
+  padding-left: 10px;
+}
+
+.footer__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1366px;
+  height: 83px;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #192632;
+  margin-top: 137px;
+}
+
+.footer__text {
+  font-family: TT Commons Trial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #5a636b;
+  margin-left: 60px;
+}
+
+.footer__text_darker {
+  margin-right: 60px;
 }
 
 *,

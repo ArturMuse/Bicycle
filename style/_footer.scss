@@ -1,0 +1,135 @@
+.footer {
+    &__body {
+        max-width: 1366px;
+        max-height: 800px;
+        margin: auto;
+        background: #f1e7d4;
+        margin-top: 183px;
+    }
+
+    &__form {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__form-title {
+        font-family: $sv;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 60px;
+        line-height: 150px;
+        letter-spacing: 0.02em;
+        color: #192632;
+        text-transform: uppercase;
+    }
+
+    &__form-input-text {
+        font-family: $tt;
+        width: 613px;
+        height: 60px;
+        background: #f1f1f1;
+        border: 1px solid #bdb199;
+        box-sizing: border-box;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        color: #bdb199;
+        margin-top: 20px;
+        padding-left: 20px;
+    }
+
+    &__form-inner {
+        display: flex;
+        max-width: 613px;
+        margin: auto;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    &__form-label-left {
+        display: flex;
+        max-width: 400px;
+        margin-left: 15px;
+    }
+
+    &__form-submit {
+        background: #fc0000;
+        width: 198px;
+        height: 57px;
+        font-family: TT Commons Trial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+
+        /* identical to box height */
+        text-align: center;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        /* Белый */
+        color: #f1f1f1;
+    }
+
+    &__form-label {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 13px;
+    }
+
+    &__form-input-checkbox {
+        border: 1px solid #192632;
+        box-sizing: border-box;
+        align-self: start;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    &__form-input-checkbox-span {
+        display: flex;
+        width: 385px;
+        align-items: stretch;
+
+        font-family: TT Commons Trial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+
+        /* Черный */
+        color: #192632;
+        padding-left: 10px;
+    }
+
+    &__bottom {
+        display: flex;
+        max-width: 1366px;
+        height: 83px;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+        background: #192632;
+        margin-top: 137px;
+    }
+
+    &__text {
+        font-family: TT Commons Trial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        color: #5a636b;
+        margin-left: 60px;
+
+        &_darker {
+            margin-right: 60px;
+        }
+    }
+
+    &__link {
+    }
+}
