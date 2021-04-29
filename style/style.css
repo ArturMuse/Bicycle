@@ -316,10 +316,6 @@
   min-height: 800px;
   overflow-y: hidden;
   height: 800px;
-}
-
-.info__body {
-  height: 1600px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -437,9 +433,7 @@
 }
 
 .info_active {
-  height: 100vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  height: 1600px;
 }
 
 .info_active .info__content {

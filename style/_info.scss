@@ -3,13 +3,10 @@
     min-height: 800px;
     overflow-y: hidden;
     height: 800px;
-    &__body {
-        height: 1600px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &__text {
         font-family: $tt;
         font-style: italic;
@@ -77,9 +74,7 @@
     }
 
     &_active {
-        height: 100vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        height: 1600px;
     }
     &_active &__content {
         position: fixed;
