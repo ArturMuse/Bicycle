@@ -314,6 +314,12 @@
 .info {
   background-color: #fc0000;
   min-height: 800px;
+  overflow-y: hidden;
+  height: 800px;
+}
+
+.info__body {
+  height: 1600px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,7 +416,8 @@
 
 .info__content {
   max-width: 438px;
-  position: relative;
+  position: absolute;
+  top: 108px;
 }
 
 .info__content-btn {
@@ -418,11 +425,65 @@
   right: -69px;
   bottom: -69px;
   z-index: 2;
+  display: none;
 }
 
 .info__content-pic {
   position: relative;
   z-index: 1;
+  -webkit-transform: translate(-100px, 800px) rotate(20deg);
+      -ms-transform: translate(-100px, 800px) rotate(20deg);
+          transform: translate(-100px, 800px) rotate(20deg);
+}
+
+.info_active {
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.info_active .info__content {
+  position: fixed;
+  top: 108px;
+  -webkit-transition: top 0.2s ease;
+  -o-transition: top 0.2s ease;
+  transition: top 0.2s ease;
+}
+
+.info_active .info__content-pic {
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.info_active .info__content-pic_out {
+  -webkit-transform: translate(-160px, -600px) rotate(-30deg);
+      -ms-transform: translate(-160px, -600px) rotate(-30deg);
+          transform: translate(-160px, -600px) rotate(-30deg);
+}
+
+.info_active .info__content-btn {
+  display: block;
+}
+
+.info_active .info__text_left {
+  -webkit-animation: scrollInfinite 10s linear infinite;
+          animation: scrollInfinite 10s linear infinite;
+}
+
+.info_active .info__text_right {
+  -webkit-animation: scrollInfiniteReverse 10s linear infinite;
+          animation: scrollInfiniteReverse 10s linear infinite;
+}
+
+.info_active .info__text-wrap {
+  position: fixed;
+}
+
+.footer {
+  position: relative;
 }
 
 .footer__body {

@@ -1,10 +1,15 @@
 .info {
     background-color: $red;
     min-height: 800px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-y: hidden;
+    height: 800px;
+    &__body {
+        height: 1600px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     &__text {
         font-family: $tt;
         font-style: italic;
@@ -16,7 +21,6 @@
         color: $smooth;
         margin-bottom: 50px;
         transform: translateX(-100%);
-        // animation: scrollInfinite 10s linear infinite;
         &-wrap {
             position: absolute;
             top: 275px;
@@ -55,18 +59,52 @@
 
     &__content {
         max-width: 438px;
-        position: relative;
+        position: absolute;
+        top: 108px;
         &-btn {
             position: absolute;
             right: -69px;
             bottom: -69px;
             z-index: 2;
+            display: none;
         }
     }
 
     &__content-pic {
         position: relative;
         z-index: 1;
+        transform: translate(-100px, 800px) rotate(20deg);
+    }
+
+    &_active {
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    &_active &__content {
+        position: fixed;
+        top: 108px;
+        transition: top 0.2s ease;
+        &-pic {
+            transition: transform 0.2s ease;
+            &_out {
+                transform: translate(-160px, -600px) rotate(-30deg);
+            }
+        }
+        &-btn {
+            display: block;
+        }
+    }
+    &_active &__text {
+        &_left {
+            animation: scrollInfinite 10s linear infinite;
+        }
+        &_right {
+            animation: scrollInfiniteReverse 10s linear infinite;
+        }
+        &-wrap {
+            position: fixed;
+        }
     }
 
     &__item-content-pic-img {
