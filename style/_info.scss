@@ -1,8 +1,8 @@
 .info {
     background-color: $red;
     min-height: 800px;
-    overflow-y: hidden;
-    height: 800px;
+    overflow-x: hidden;
+    height: 3000px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -18,11 +18,6 @@
         color: $smooth;
         margin-bottom: 50px;
         transform: translateX(-100%);
-        &-wrap {
-            position: absolute;
-            top: 275px;
-            z-index: 0;
-        }
         span {
             -webkit-text-stroke: 2px $smooth;
             color: transparent;
@@ -34,6 +29,22 @@
             transform: translateX(100%);
             span:first-child {
                 margin-left: 0;
+            }
+        }
+        &-wrap {
+            position: absolute;
+            top: 275px;
+            z-index: 0;
+            height: 250px;
+            &-second {
+                .info__text {
+                    &_left {
+                        transform: translateX(100%);
+                    }
+                    &_right {
+                        transform: translateX(-100%);
+                    }
+                }
             }
         }
     }
@@ -56,6 +67,7 @@
 
     &__content {
         max-width: 438px;
+        height: 590px;
         position: absolute;
         top: 108px;
         &-btn {
@@ -68,20 +80,26 @@
     }
 
     &__content-pic {
+        opacity: 0;
+    }
+
+    &__content-video {
         position: relative;
         z-index: 1;
         transform: translate(-100px, 800px) rotate(20deg);
-    }
-
-    &_active {
-        height: 1600px;
     }
     &_active &__content {
         position: fixed;
         top: 108px;
         transition: top 0.2s ease;
-        &-pic {
+        &-video {
             transition: transform 0.2s ease;
+            &_out {
+                transform: translate(-160px, -600px) rotate(-30deg);
+            }
+        }
+        &-pic {
+            transform: translate(-100px, 800px) rotate(20deg);
             &_out {
                 transform: translate(-160px, -600px) rotate(-30deg);
             }
@@ -90,15 +108,23 @@
             display: block;
         }
     }
-    &_active &__text {
-        &_left {
-            animation: scrollInfinite 10s linear infinite;
-        }
-        &_right {
-            animation: scrollInfiniteReverse 10s linear infinite;
-        }
-        &-wrap {
-            position: fixed;
+    &_active &__text-wrap {
+        position: fixed;
+        .info__text {
+            &_left {
+                animation: scrollInfinite 10s linear infinite;
+                &-off {
+                    animation: none;
+                    transition: transform 5s ease;
+                }
+            }
+            &_right {
+                animation: scrollInfiniteReverse 10s linear infinite;
+                &-off {
+                    animation: none;
+                    transition: transform 5s ease;
+                }
+            }
         }
     }
 

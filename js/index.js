@@ -1,5 +1,5 @@
 const info = document.querySelector(".js-info")
-const infoPic = document.querySelector(".js-pic")
+const infoVideo = document.querySelector(".js-video")
 const infoTextLeft = document.querySelector(".js-text-left")
 const infoTextRight = document.querySelector(".js-text-right")
 
@@ -11,7 +11,8 @@ const options = {
 }
 
 const state = {
-    lastScrollPosition: 800
+    lastScrollPosition: 800,
+    secondScrollPosition: 1200
 }
 
 const observer = new IntersectionObserver(function (entries, obserwer) {
@@ -19,57 +20,33 @@ const observer = new IntersectionObserver(function (entries, obserwer) {
         if (entry.isIntersecting) {
             window.addEventListener("scroll", function () {
                 let currentScroll = window.pageYOffset;
-                info.classList.remove("info_active")
-                infoPic.style.transform = `translate(${-100 + pageYOffset / 10 + 20}px, ${800 - pageYOffset / 1.1 - 72.7}px) rotate(${20 - pageYOffset / 45 - 2}deg)`
-                infoTextLeft.style.transform = `translateX(${-100 + pageYOffset / 10}%)`
-                infoTextRight.style.transform = `translateX(${100 - pageYOffset / 10}%)`
+                console.log(currentScroll)
                 // Вниз
                 if (currentScroll > state.lastScrollPosition) {
-                    if (currentScroll < 1000 && currentScroll > 800) {
-                        info.classList.add("info_active")
-                        infoPic.style.transform = "translate(0px, 0px) rotate(0deg)"
-                    } else {
-
+                    info.classList.add("info_active")
+                    infoVideo.style.transform = "translate(0px, 0px) rotate(0deg)"
+                    // Вторая секция
+                    if (currentScroll > state.secondScrollPosition) {
+                        infoTextLeft.classList.add("info__text_left-off")
+                        infoTextRight.classList.add("info__text_right-off")
+                        infoTextLeft.style.transform = `translate(-100%)`
+                        infoTextRight.style.transform = `translate(100%)`
+                        infoVideo.style.transform = `translate(89.55px, -814.064px) rotate(-19.6778deg)`
+                        setTimeout(() => {
+                            infoTextLeftSecond.classList.add("info__text_left-on")
+                            infoTextRightSecond.classList.add("info__text_right-on")
+                        }, 5000)
                     }
+                } else {
+                    info.classList.remove("info_active")
+                    infoTextLeft.classList.remove("info__text_left-off")
+                    infoTextRight.classList.remove("info__text_right-off")
+                    infoVideo.style.transform = `translate(${-100 + pageYOffset / 10 + 20}px, ${800 - pageYOffset / 1.1 - 72.7}px) rotate(${20 - pageYOffset / 45 - 2}deg)`
+                    infoTextLeft.style.transform = `translateX(${-100 + pageYOffset / 10}%)`
+                    infoTextRight.style.transform = `translateX(${100 - pageYOffset / 10}%)`
                 }
-                // Вверх
-                if (currentScroll <= state.lastScrollPosition) {
-
-                }
-
-
-
-                // if (pageYOffset > 800) {
-                //     info.classList.add("info_active")
-                //     infoPic.style.transform = "translate(0px, 0px) rotate(0deg)"
-                //     // document.body.style.overflow = "hidden"
-                //     // setTimeout(function () {
-                //     //     document.body.style.overflow = "auto"
-                //     // }, 3000)
-                //     // if (pageYOffset > 1000) {
-                //     //     infoPic.style.transform = "translate(-200px, -780px) rotate(-20deg)"
-                //     // }
-                // } else {
-                //     info.classList.remove("info_active")
-                //     infoPic.style.transform = `translate(${-100 + pageYOffset / 10 + 20}px, ${800 - pageYOffset / 1.1 - 72.7}px) rotate(${20 - pageYOffset / 45 - 2}deg)`
-                //     infoTextLeft.style.transform = `translateX(${-100 + pageYOffset / 10}%)`
-                //     infoTextRight.style.transform = `translateX(${100 - pageYOffset / 10}%)`
-                // }
             })
-            // info.addEventListener("scroll", function (e) {
-            //     if (e.detail == 'down') {
-            //         info.scrollTop += 50
-            //         console.log(e)
-            //     }
-            //     window.onscroll = function (evt) {
-            //         if (info.scrollTop < 190) {
-            //             window.scrollTo(0, 0);
-            //             let event = new Event("scroll");
-            //             event.detail = 'down';
-            //             info.dispatchEvent(event);
-            //         }
-            //     }
-            // })
+
         }
         console.log(entry)
     })
